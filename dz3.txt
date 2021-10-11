@@ -1,0 +1,98 @@
+1. На локальном репозитории сделать ветки для:
+- Postman -
+git checkout -b Postman
+- Jmeter
+git checkout -b Jmeter
+- CheckLists
+git checkout -b CheckLists
+- Bag Reports
+git checkout -b Bag_Reports
+- SQL
+git checkout -b SQL
+- Charles
+git checkout -b Charles
+- Mobile testing
+git checkout -b Mobile_testing
+
+2. Запушить все ветки на внешний репозиторий
+git push -u origin Postman
+git push -u origin Jmeter
+git push -u origin CheckLists
+git push -u origin Bag_Reports
+git push -u origin SQL
+git push -u origin Charles
+git push -u origin Mobile_testing
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+git checkout Bag_Reports
+touch structure.txt
+vim  structure.txt
+insert
+"Структура Баг репорта:
+1) Название баг репорта (Name)
+2) Короткое описание (Summary)
+3) Проект (Project)
+4) Компонент приложения (Component)
+5) Номер версии (Version)
+6) Серьезность (Severity)
+7) Приоритет (Priority)
+8) Статус (Status)
+9) Автор (Author)
+10) Назначен на (Assigned To)
+11) Окружение
+- ОС / Сервис Пак и т.д. / Браузера + версия / ...
+- ...
+12) Описание
+- Шаги воспроизведения (Steps to Reproduce)
+- Фактический Результат (Result)
+- Ожидаемый результат (Expected Result)
+13) Дополнения
+- Прикрепленный файл (Attachment)"
+:wq
+
+4. Запушить структуру багрепорта на внешний репозиторий
+git add .
+git commit -m structure.txt
+git push
+
+5. Вмержить ветку Bag Reports в Main
+git checkout main
+git merge Bag_Reports
+
+6. Запушить main на внешний репозиторий.
+git push -u origin main
+
+7. В ветке CheckLists набросать структуру чек листа.
+git checkout CheckLists
+touch check.txt
+vim check.txt
+insert
+"Сайт "checklist.example"
+Регистрация
+- Email
+- Соцсети
+- Валидация полей
+Авторизация
+- Пользователь активирован
+- Пользователь не активирован
+- Восстановление пароля
+- Валидация полей
+Профиль
+- Изменение имени
+- Изменение email
+- Изменение пароля
+- Валидация полей
+- Подписка
+- Удаление аккаунта"
+
+8. Запушить структуру на внешний репозиторий
+git add .
+git commit -m check.txt
+git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+Нажимаем вкладку Pull requests
+и делаем Pull Request ветки CheckLists в main
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+git pull
